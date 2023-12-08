@@ -1,3 +1,5 @@
+package direction;
+
 public enum Direction {
 
     Up,

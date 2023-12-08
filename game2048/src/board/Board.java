@@ -1,16 +1,30 @@
+package board;
+
+import key.Key;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-abstract class Board {
-
-    private int weight;
+abstract public class Board {
+    private int width;
     private int height;
-    private Map<Key, Integer> board = new HashMap<>();
+    protected Map<Key, Integer> board = new HashMap<>();
 
-    public Board(int weight, int height) {
-        this.weight = weight;
+    public Board(int width, int height) {
+        this.width = width;
         this.height = height;
+    }
+
+    public Map<Key, Integer> getBoard() {
+        return board;
+    }
+
+    public int getHeight() {
+        return height;
+    }
+
+    public int getWidth() {
+        return width;
     }
 
     public abstract void fillBoard(List<Integer> list);
