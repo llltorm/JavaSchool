@@ -6,10 +6,13 @@ import java.util.List;
 public class GameHelper {
 
     public List<Integer> moveAndMergeEqual(List<Integer> list) {
-        ArrayList<Integer> listNotNull;
-        ArrayList<Integer> newBoard;
-        listNotNull = (ArrayList<Integer>) fillListNotNull(list);
-        newBoard = (ArrayList<Integer>) fillNewBoard(listNotNull);
+        List<Integer> listNotNull;
+        List<Integer> newBoard;
+        if (list.isEmpty()) {
+            return list;
+        }
+        listNotNull =  fillListNotNull(list);
+        newBoard =  fillNewBoard(listNotNull);
         while (newBoard.size() < list.size()) {
             newBoard.add(null);
         }
@@ -18,8 +21,8 @@ public class GameHelper {
 
     private List<Integer> fillListNotNull(List<Integer> list)
     {
-        ArrayList<Integer> listNotNull = new ArrayList();
-        for (Integer value : list) {
+        List<Integer> listNotNull = new ArrayList();
+        for (var value : list) {
             if (value != null) {
                 listNotNull.add(value);
             }
@@ -27,11 +30,11 @@ public class GameHelper {
         return listNotNull;
     }
 
-    private List<Integer> fillNewBoard( ArrayList<Integer> listNotNull)
+    private List<Integer> fillNewBoard( List<Integer> listNotNull)
     {
         var newBoard = new ArrayList();
         for (int i = 0; i < listNotNull.size(); i++) {
-            if ((i < listNotNull.size() - 1) && (listNotNull.get(i) == listNotNull.get(i + 1)))  {
+            if ((i < listNotNull.size() - 1) && (listNotNull.get(i).equals(listNotNull.get(i + 1))))  {
                 newBoard.add(listNotNull.get(i) * 2);
                 if (i < listNotNull.size() - 1) {
                     i++;

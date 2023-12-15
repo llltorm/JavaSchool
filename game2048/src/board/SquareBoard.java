@@ -3,10 +3,8 @@ package board;
 import key.Key;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
-import java.util.Objects;
 
-public class SquareBoard extends Board {
+public class SquareBoard<V> extends Board<Key,V> {
 
     private int size;
 
@@ -16,11 +14,18 @@ public class SquareBoard extends Board {
     }
 
     @Override
-    public void fillBoard(List<Integer> list) {
+    public void fillBoard(List<V> list) {
+        try {
+            if (list.size() > 16) {
+                throw new RuntimeException();
+            }
+        } catch (RuntimeException e) {
+            throw new ExceptionInInitializerError();
+        }
         board.clear();
-        int index = 0;
-        for (int i = 0; i < size; i++) {
-            for (int j = 0; j < size; j++) {
+        var index = 0;
+        for (var i = 0; i < size; i++) {
+            for (var j = 0; j < size; j++) {
                 addItem(new Key(i, j), list.get(index));
                 index++;
             }
@@ -29,20 +34,19 @@ public class SquareBoard extends Board {
 
     @Override
     public List<Key> availableSpace() {
-        List<Key> ListNullValues = new ArrayList<>();
-        for (int i = 0; i < size; i++) {
-            for (int j = 0; j < size; j++) {
-                var value = board.get(getKey(i, j));
-                if (value == null) {
-                    ListNullValues.add(getKey(i, j));
+        var ListNullValues = new ArrayList<Key>();
+        for (var i = 0; i < size; i++) {
+            }
+            for (var entry : board.entrySet()) {
+                if (entry.getValue() == null) {
+                    ListNullValues.add(entry.getKey());
                 }
             }
-        }
         return ListNullValues;
     }
 
     @Override
-    public void addItem(Key key, Integer value) {
+    public void addItem(Key key, V value) {
         board.put(key, value);
     }
 
@@ -57,48 +61,42 @@ public class SquareBoard extends Board {
     }
 
     @Override
-    public Integer getValue(Key key) {
+    public V getValue(Key key) {
         return board.get(key);
     }
 
     @Override
     public List<Key> getColumn(int i) {
-        List<Key> columnKey = new ArrayList<>();
-        for (var entry : board.entrySet()) {
-            if (entry.getKey().getJ() == i) {
-                columnKey.add(entry.getKey());
-            }
+        var columnKey = new ArrayList<Key>();
+        for (int j = 0; j < size; j++) {
+            columnKey.add(getKey(j, i));
         }
+
         return columnKey;
     }
 
     @Override
-    public List<Key> getRow(int i) {
-        List<Key> rowKey = new ArrayList<>();
-        for (var entry : board.entrySet()) {
-            if (entry.getKey().getI() == i) {
-                rowKey.add(entry.getKey());
-            }
+    public List<Key> getRow(int j) {
+        var rowKey = new ArrayList<Key>();
+        for (int i = 0; i < size; i++) {
+            rowKey.add(getKey(j, i));
         }
         return rowKey;
     }
 
     @Override
-    public boolean hasValue(Integer value){
-        for (var entry : board.entrySet()) {
-            if (Objects.equals(entry.getValue(), value)) {
-                return true;
-            }
-        }
-        return false;
+    public boolean hasValue(V value){
+        return board.containsValue(value);
     }
 
     @Override
-    public List<Integer> getValue(List<Key> keys) {
-        List<Integer> listValue = new ArrayList<>();
+    public List<V> getValues(List<Key> keys) {
+        var listValue = new ArrayList<V>();
         for (var key: keys) {
-            if (board.containsKey(key)) {
-                listValue.add(board.get(key));
+            for (var entry : board.entrySet()) {
+                if (entry.getKey() == key) {
+                    listValue.add(entry.getValue());
+                }
             }
         }
         return listValue;

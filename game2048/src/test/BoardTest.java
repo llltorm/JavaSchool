@@ -18,7 +18,7 @@ public class BoardTest {
         if (!board.hasValue(null) || !board.hasValue(3)) throw new RuntimeException("hasValue not work =(");
         assertEquals(board.getColumn(0), asList(board.getKey(0,0), board.getKey(1,0)));
         assertEquals(board.getRow(0), asList(board.getKey(0,0), board.getKey(0,1)));
-        assertEquals(board.getValue(board.getColumn(0)), asList(1, 3));
+        assertEquals(board.getValues(board.getColumn(0)), asList(1, 3));
         board.fillBoard(asList(5,6,7,8));
         if (!board.availableSpace().isEmpty()) throw new RuntimeException("fillBoard not correct work =(");
     }
