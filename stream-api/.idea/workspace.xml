@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="fa59adc1-285c-41f9-9240-eda198dd284b" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="2a38oRK6jMxNrJrk8zi09SlvR4T" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="ru.lesson.dto" />
+      <recent name="ru" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.streamApiTest.testTask10">
+    <configuration name="streamApiTest.testTask10" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="stream-api" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ru.lesson.dto.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ru.lesson.dto" />
+      <option name="MAIN_CLASS_NAME" value="ru.lesson.dto.streamApiTest" />
+      <option name="METHOD_NAME" value="testTask10" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="streamApiTest.testTask6" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="stream-api" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ru.lesson.dto.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ru.lesson.dto" />
+      <option name="MAIN_CLASS_NAME" value="ru.lesson.dto.streamApiTest" />
+      <option name="METHOD_NAME" value="testTask6" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="streamApiTest.testTask7" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="stream-api" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ru.lesson.dto.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ru.lesson.dto" />
+      <option name="MAIN_CLASS_NAME" value="ru.lesson.dto.streamApiTest" />
+      <option name="METHOD_NAME" value="testTask7" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="streamApiTest.testTask8" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="stream-api" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ru.lesson.dto.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ru.lesson.dto" />
+      <option name="MAIN_CLASS_NAME" value="ru.lesson.dto.streamApiTest" />
+      <option name="METHOD_NAME" value="testTask8" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="streamApiTest.testTask9" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="stream-api" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ru.lesson.dto.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ru.lesson.dto" />
+      <option name="MAIN_CLASS_NAME" value="ru.lesson.dto.streamApiTest" />
+      <option name="METHOD_NAME" value="testTask9" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.streamApiTest.testTask10" />
+        <item itemvalue="JUnit.streamApiTest.testTask9" />
+        <item itemvalue="JUnit.streamApiTest.testTask8" />
+        <item itemvalue="JUnit.streamApiTest.testTask7" />
+        <item itemvalue="JUnit.streamApiTest.testTask6" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="fa59adc1-285c-41f9-9240-eda198dd284b" name="Default Changelist" comment="" />
+      <created>1703536083746</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1703536083746</updated>
+    </task>
+    <servers />
+  </component>
+</project>
