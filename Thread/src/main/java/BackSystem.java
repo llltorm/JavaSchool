@@ -1,7 +1,9 @@
-public class BackSystem {
-    private volatile long amount;
+import java.util.concurrent.atomic.AtomicLong;
 
-    public BackSystem(long amount) {
+public class BackSystem {
+    private volatile AtomicLong amount;
+
+    public BackSystem(AtomicLong amount) {
         this.amount = amount;
     }
 
@@ -15,35 +17,37 @@ public class BackSystem {
         }
     }
 
-    public synchronized void increase(Request request) {
-        amount = amount + request.getAmount();
+    private void increase(Request request) {
+        var flag = false;
+        while (!flag) {
+            var oldAmount = amount.getAcquire();
+            var increaseAmount = request.getAmount();
+            var newAmount = oldAmount + increaseAmount;
+            flag = amount.compareAndSet(oldAmount, newAmount);
+        }
         System.out.println("Бэк система: Заявкка (" +
                 request.getClientName() + ", " +
                 request.getAmount() + ", " +
                 request.getRequestType() + ")" +
                 " успешно выполнена. Текущий баланс:" + amount);
-        notifyAll();
+
     }
 
-    public synchronized void decrease(Request request) {
-        while (amount - request.getAmount() <= 0) {
-            try {
-                System.out.println("Бэк система: Заявкка (" +
-                        request.getClientName() + ", " +
-                        request.getAmount() + ", " +
-                        request.getRequestType() + ")" +
-                        " не выполнена. Сумма больше баланса. Текущий баланс:" + amount);
-                wait();
-            } catch (InterruptedException e) {
-                throw new RuntimeException(e);
+    private void decrease(Request request) {
+        var flag = false;
+        while (!flag) {
+            var oldAmount = amount.getAcquire();
+            var decreaseAmount = request.getAmount();
+            var newAmount = oldAmount - decreaseAmount;
+            if (newAmount < 0) {
+                continue;
             }
+            flag = amount.compareAndSet(oldAmount, newAmount);
         }
-        amount = amount - request.getAmount();
         System.out.println("Бэк система: Заявкка (" +
                 request.getClientName() + ", " +
                 request.getAmount() + ", " +
                 request.getRequestType() + ")" +
                 " успешно выполнена. Текущий баланс:" + amount);
-        notifyAll();
     }
 }

@@ -12,8 +12,14 @@ public class RequestHandler implements Runnable {
     @Override
     public void run() {
         while (!Thread.currentThread().isInterrupted()) {
-            Request currentRequest = frontalSystem.receiveRequest();
-            System.out.println(name + ": Получена заявка на обработку по клиенту - " + currentRequest.getClientName());
+            Request currentRequest = null;
+            try {
+                currentRequest = frontalSystem.receiveRequest();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            System.out.println(name + ": Получена заявка на обработку по клиенту - " +
+                    currentRequest.getClientName());
             backSystem.changingAmount(currentRequest);
         }
     }
